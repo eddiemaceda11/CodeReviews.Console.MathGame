@@ -1,12 +1,16 @@
-﻿using Mathgame;
+﻿using System.Runtime.ConstrainedExecution;
+using Mathgame;
 
 Game game = new Game();
 Random random = new Random();
+int round = 1;
 
-while (true)
+while (round <= 5)
 {
+  // game.DisplayMenu();
+  Console.WriteLine("Current Round: " + round);
   game.DisplayMenu();
-  game.DisplayMenu(); string? input = Console.ReadLine();
+  string? input = Console.ReadLine();
 
   int firstNumber = random.Next(0, 100);
   int secondNumber = random.Next(0, 100);
@@ -20,7 +24,13 @@ while (true)
   if (input != null)
   {
     game.PerformOperation(firstNumber, secondNumber, input);
+    round++;
   }
+}
+
+if (round > 5)
+{
+  Console.WriteLine("Final score: " + Game.Score);
 }
 
 
