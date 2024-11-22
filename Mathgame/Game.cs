@@ -3,7 +3,7 @@ namespace Mathgame
     public class Game
     {
         public List<string> History = new List<string>();
-        public static int Score { get; set; } = 0;
+        public static int Score { get; set; }
 
         public void DisplayMenu()
         {

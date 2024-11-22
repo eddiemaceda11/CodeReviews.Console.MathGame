@@ -2,7 +2,7 @@ namespace Mathgame
 {
     public class Operation
     {
-        public void checkAnswer(int gameAnswer)
+        public void CheckAnswer(int gameAnswer)
         {
             Console.WriteLine("Enter your answer: ");
             int? answer = Convert.ToInt32(Console.ReadLine());
@@ -11,7 +11,7 @@ namespace Mathgame
             {
                 Console.WriteLine("Your answer was correct! Press a key to play the next round");
                 Game.UpdateScore();
-                Console.WriteLine("Score from checkAnswer is: " + Game.Score);
+                Console.WriteLine("Score: " + Game.Score);
             }
             else
             {
@@ -26,17 +26,17 @@ namespace Mathgame
             {
                 case "+":
                     Console.WriteLine($"{operand1} + {operand2}");
-                    checkAnswer(operand1 + operand2);
+                    CheckAnswer(operand1 + operand2);
                     game.History.Add($"{operand1} + {operand2} = {operand1 + operand2}");
                     break;
                 case "-":
                     Console.WriteLine($"{operand1} - {operand2}");
-                    checkAnswer(operand1 - operand2);
+                    CheckAnswer(operand1 - operand2);
                     game.History.Add($"{operand1} - {operand2} = {operand1 - operand2}");
                     break;
                 case "*":
                     Console.WriteLine($"{operand1} * {operand2}");
-                    checkAnswer(operand1 * operand2);
+                    CheckAnswer(operand1 * operand2);
                     game.History.Add($"{operand1} * {operand2} = {operand1 * operand2}");
                     break;
                 case "/":
@@ -47,7 +47,7 @@ namespace Mathgame
                     else
                     {
                         Console.WriteLine($"{operand1} / {operand2}");
-                        checkAnswer(operand1 / operand2);
+                        CheckAnswer(operand1 / operand2);
                         game.History.Add($"{operand1} / {operand2} = {operand1 / operand2}");
                     }
                     break;

@@ -1,5 +1,4 @@
-﻿using System.Runtime.ConstrainedExecution;
-using Mathgame;
+﻿using Mathgame;
 
 Game game = new Game();
 Random random = new Random();
@@ -7,7 +6,6 @@ int round = 1;
 
 while (round <= 5)
 {
-  // game.DisplayMenu();
   Console.WriteLine("Current Round: " + round);
   game.DisplayMenu();
   string? input = Console.ReadLine();
