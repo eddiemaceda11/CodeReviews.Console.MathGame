@@ -40,16 +40,14 @@ namespace Mathgame
                     game.History.Add($"{operand1} * {operand2} = {operand1 * operand2}");
                     break;
                 case "/":
-                    if (operand1 % operand2 != 0)
-                    {
-                        Console.WriteLine("Invalid Division attempt");
-                    }
-                    else
-                    {
-                        Console.WriteLine($"{operand1} / {operand2}");
-                        CheckAnswer(operand1 / operand2);
-                        game.History.Add($"{operand1} / {operand2} = {operand1 / operand2}");
-                    }
+                    Random random = new Random();
+                    int divOperand2 = random.Next(1, 11);
+                    int divOperand1 = divOperand2 * random.Next(0, 101 / divOperand2);
+                    int result = divOperand1 / divOperand2;
+
+                    Console.WriteLine($"{divOperand1} / {divOperand2}");
+                    CheckAnswer(result);
+                    game.History.Add($"{divOperand1} / {divOperand2} = {result}");
                     break;
                 default:
                     Console.WriteLine("Not a valid operation");
